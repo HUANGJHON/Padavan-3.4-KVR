@@ -154,8 +154,11 @@ LDLIBS += m
 CRYPT_AVAILABLE := $(shell echo 'int main(void){return 0;}' >bb_libtest.c; $(CC) $(CFLAGS) -lcrypt -o /dev/null bb_libtest.c >/dev/null 2>&1 && echo "y"; rm bb_libtest.c)
 RT_AVAILABLE    := $(shell echo 'int main(void){return 0;}' >bb_libtest.c; $(CC) $(CFLAGS) -lrt    -o /dev/null bb_libtest.c >/dev/null 2>&1 && echo "y"; rm bb_libtest.c)
 ifeq ($(CRYPT_AVAILABLE),y)
-LDLIBS += crypt
+LDLIBS += m rt crypt
+else
+LDLIBS += m rt
 endif
+# libm may be needed for dc, awk, ntpd
 # librt may be needed for clock_gettime()
 ifeq ($(RT_AVAILABLE),y)
 LDLIBS += rt

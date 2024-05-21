@@ -61,7 +61,9 @@
 #define VSF_SYSDEP_HAVE_SHADOW
 #define VSF_SYSDEP_HAVE_USERSHELL
 #define VSF_SYSDEP_HAVE_LIBCAP
+#if defined(__GLIBC__) || defined(__UCLIBC__)
 #define VSF_SYSDEP_HAVE_UTMPX
+#endif
 
 #define __USE_GNU
 #include <utmpx.h>

@@ -31,7 +31,7 @@
 #include <math.h>
 #include <string.h>
 #include <sys/wait.h>
-
+#include <linux/limits.h>
 #include <sys/ioctl.h>
 
 #include "rc.h"
