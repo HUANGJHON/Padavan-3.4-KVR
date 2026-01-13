@@ -12,7 +12,7 @@
 #define BOARD_GPIO_BTN_WPS	16
 #undef  BOARD_GPIO_LED_ALL
 #undef  BOARD_GPIO_LED_WIFI
-#define BOARD_GPIO_LED_POWER	15	/* sys_blue: 15, sys_red: 14 */
+#define BOARD_GPIO_LED_POWER	15	/* sys_green: 15, sys_red: 13 */
 #undef  BOARD_GPIO_LED_LAN
 #undef  BOARD_GPIO_LED_WAN
 #undef  BOARD_GPIO_LED_USB
